@@ -1,51 +1,32 @@
-parking = {}
-parking[0] = ""
-parking[1] = ""
-parking[2] = ""
-parking[3] = ""
-parking[4] = ""
-parking[5] = ""
-parking[6] = ""
-parking[7] = ""
-parking[8] = ""
-parking[9] = ""
-parking[10] = ""
+place = {}
+place[1] = ""
+place[2] = ""
+place[3] = ""
+place[4] = ""
+place[5] = ""
+place[6] = ""
+place[7] = ""
+place[8] = ""
+place[9] = ""
+place[10] = ""
 
-nom = input('Quel est votre nom')
-place_voiture = input('Quel place voulait vous prendre ? de 1 à 10')
+while True:
+    num_actu = 1
+    place_actu = print("Vous etes devant la place", num_actu)
+    choix_user = input('1- placer votre voiture 2- Prendre votre voiture')
 
-with open("donne.txt", "a", encoding="utf8") as fichier:
-    if place_voiture == '1':
-        parking[1] = nom
-        fichier.write("cette place appartient à : ")
-        fichier.write(str(parking[1]))
-    elif parking[1] == nom:
-        fichier.read(int(parking[1]))
+    if place[num_actu] == "Libre":
+        print(choix_user)
+    if choix_user == '1':
+        place[num_actu] = "Occupé"
+    elif place[num_actu] == "Occupe":
+        num_actu += 1
+    else:
+        print("La place est inexistante ")
 
-    if place_voiture == '2':
-        parking[2] = nom
-        fichier.write("cette place appartient à : ")
-        fichier.write(str(parking[2]))
-    elif parking[2] == nom:
-        fichier.read(int(parking[2]))
 
-    if place_voiture == '3':
-        parking[3] = nom
-        fichier.write("cette place appartient à : ")
-        fichier.write(str(parking[3]))
-    elif parking[3] == nom:
-        fichier.read(int(parking[3]))
 
-    if place_voiture == '4':
-        parking[4] = nom
-        fichier.write("cette place appartient à : ")
-        fichier.write(str(parking[4]))
-    elif parking[4] == nom:
-        fichier.read(int(parking[4]))
 
-    if place_voiture == '5':
-        parking[5] = nom
-        fichier.write("cette place appartient à : ")
-        fichier.write(str(parking[5]))
-    elif parking[5] == nom:
-        fichier.read(int(parking[5]))
+
+
+
